@@ -21,6 +21,20 @@ const config: Configuration = {
           },
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+            "style-loader",
+            "css-loader",
+            {
+              loader: "sass-loader",
+              options: {
+                // Prefer `dart-sass`
+                implementation: require.resolve("sass"),
+              },
+            },
+          ],
+    },
   
       {
         test: /\.(png|jpe?g|gif|jp2|webp)$/,
